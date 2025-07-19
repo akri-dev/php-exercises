@@ -1,0 +1,23 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap');
+
+.container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    min-height: 100vh;
+    font-family: 'Inter', sans-serif;
+    font-weight: 700 !important;
+}
+
+#card {
+    margin: 0 auto;
+}
+
+.card-header h2 {
+    margin-bottom: 0;
+}
+
+.exercise-section {
+    font-size: 1.5em;
+}
