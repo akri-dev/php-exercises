@@ -18,7 +18,7 @@ include 'assets/functions/exercise-functions.php'
 
 <body>
     <main class="container">
-        <h1 class="text-center">1. Create the given pattern</h1>
+        <h1 class="text-center">2. Create the given pattern</h1>
         <div class="exercise-section mt-4 text-center">
             <?php
             echo exerciseTwo();
