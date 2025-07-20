@@ -1,6 +1,25 @@
 <?php
 session_start();
 
+// Define the reset interval in 10 seconds
+$resetInterval = 10;
+
+// --- Cookie Session Reset Logic ---
+// Check if the 'last_activity' cookie exists
+if (isset($_COOKIE['last_activity'])) {
+    $lastActivityTime = (int)$_COOKIE['last_activity'];
+    $currentTime = time();
+
+    if (($currentTime - $lastActivityTime) > $resetInterval) {
+        $_SESSION['stack'] = [];
+        $message = 'Session stack has been reset due to inactivity.';
+        $messageType = 'info';
+    }
+}
+
+// Update the 'last_activity' cookie with the current timestamp
+setcookie('last_activity', time(), time() + (86400 * 30), "/");
+
 if (!isset($_SESSION['stack'])) {
     $_SESSION['stack'] = [];
 }
