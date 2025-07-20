@@ -21,3 +21,8 @@
 .exercise-section {
     font-size: 1.5em;
 }
+
+table, th, td {
+    padding: 1.5rem;
+    font-size: 1.5rem;
+}

@@ -18,14 +18,14 @@
             </div>
             <div class="card-body">
                 <h3 class="text-center">Table of Contents</h3>
-                <h4>Part 1</h4>
+                <h4 class="mt-2">Part 1</h4>
                 <div class="list-group">
                     <a href="./exercise1-1.php" class="list-group-item list-group-item-action" aria-current="true">1. Create the given pattern</a>
                     <a href="./exercise1-2.php" class="list-group-item list-group-item-action" aria-current="true">2. Create the given pattern (x)</a>
                     <a href="./exercise1-3.php" class="list-group-item list-group-item-action" aria-current="true">3. Create the given pattern</a>
                     <a href="./exercise1-4.php" class="list-group-item list-group-item-action" aria-current="true">4. Create the given pattern</a>
                 </div>
-                <h4>Part 2</h4>
+                <h4 class="mt-2">Part 2</h4>
                 <div class="list-group">
                     <a href="#" class="list-group-item list-group-item-action" aria-current="true">1. Generate a random character from a -k </a>
                     <a href="#" class="list-group-item list-group-item-action" aria-current="true"></a>

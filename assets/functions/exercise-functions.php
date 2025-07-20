@@ -33,8 +33,7 @@ function exerciseOne($numRows, $diamondCount)
                 for ($star = 1; $star <= 2 * $row - 1; $star++) {
                     if ($star === 1 and $row === 1) {
                         $pattern .= '&nbsp;*' . $blankSpace;
-                    }
-                    elseif ($star === 1) {
+                    } elseif ($star === 1) {
                         $pattern .= '*' . $blankSpace;
                     } elseif ($star === 2 * $row - 1) {
                         $pattern .= '*';
@@ -57,8 +56,7 @@ function exerciseOne($numRows, $diamondCount)
                 for ($star = 1; $star <= 2 * $row - 1; $star++) {
                     if ($star === 1 and $row === 1) {
                         $pattern .= '&nbsp;*' . $blankSpace;
-                    }
-                    elseif ($star === 1) {
+                    } elseif ($star === 1) {
                         $pattern .= '*' . $blankSpace;
                     } elseif ($star === 2 * $row - 1) {
                         $pattern .= '*';
@@ -101,17 +99,15 @@ function exerciseTwo()
             if ($row == $col || $row + $col == $size - 1) {
                 if ($row == $middle && $col == $middle) {
                     echo "1";
-                }
-                else if ($row % 2 != 0) {
-                    if ($row == 1 || $row == $size - 2) { 
+                } else if ($row % 2 != 0) {
+                    if ($row == 1 || $row == $size - 2) {
                         echo "5";
-                    } else if ($row == 3 || $row == $size - 4) { 
+                    } else if ($row == 3 || $row == $size - 4) {
                         echo "3";
                     } else {
                         echo "*";
                     }
-                }
-                else {
+                } else {
                     echo "*";
                 }
             } else {
@@ -120,4 +116,24 @@ function exerciseTwo()
         }
         echo "<br>";
     }
+}
+
+
+function exerciseThree() {
+    echo "<table>";
+    for($row = 1; $row <= 5; $row++){
+        echo "<tr>";
+        for($col = 1; $col <= $row; $col++) {
+            echo "<td>" . $row*$col . "</td>";
+        }
+        echo "</tr>";
+    }
+    for($row = 4; $row >= 1; $row--){
+        echo "<tr>";
+        for($col = 1; $col <= $row; $col++) {
+            echo "<td>" . $row*$col . "</td>";
+        }
+        echo "</tr>";
+    }
+    echo "</table>";
 }
