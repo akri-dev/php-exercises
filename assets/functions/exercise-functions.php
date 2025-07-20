@@ -229,3 +229,23 @@ function exerciseSix()
     // Checking of Sum of Column numbers in Array
     // print_r(array_values($columnSum));
 }
+
+// ********************** PART TWO EXERCISE FIVE **********************
+
+function exerciseSeven($length, $width)
+{
+    $consonants = "bcdfghjklmnpqrstvwxyz"; // All lowercase English consonants
+    echo "<div class='mt-2 d-flex  justify-content-center'>";
+    echo "<table>";
+    for ($row = 1; $row <= $width; $row++) {
+        echo "<tr>";
+        for ($col = 1; $col <= $length; $col++) {
+            $randomIndex = rand(0, strlen($consonants) - 1);
+            $consonants[$randomIndex];
+            echo "<td>" . $consonants[$randomIndex] . "</td>";
+        }
+        echo "</tr>";
+    }
+    echo "</table>";
+    echo "</div>";
+}
