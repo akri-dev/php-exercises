@@ -11,7 +11,7 @@ function blankSpaceLoop($numBlankSpace)
     return $blankSpace;
 }
 
-// ********************** EXERCISE ONE **********************
+// ********************** PART ONE EXERCISE ONE **********************
 function exerciseOne($numRows, $diamondCount)
 {
     // Initialize Array
@@ -82,7 +82,7 @@ function exerciseOne($numRows, $diamondCount)
     return implode("<br>", $diamond);
 }
 
-// ********************** EXERCISE TWO **********************
+// ********************** PART ONE EXERCISE TWO **********************
 function exerciseTwo()
 {
     $blankSpace = blankSpaceLoop(12);
@@ -118,7 +118,7 @@ function exerciseTwo()
     }
 }
 
-
+// ********************** PART ONE EXERCISE THREE **********************
 function exerciseThree()
 {
     echo "<table>";
@@ -139,6 +139,7 @@ function exerciseThree()
     echo "</table>";
 }
 
+// ********************** PART ONE EXERCISE FOUR **********************
 function exerciseFour()
 {
 
@@ -157,6 +158,7 @@ function exerciseFour()
     echo "</table>";
 }
 
+// ********************** PART TWO EXERCISE ONE **********************
 function exerciseFive()
 {
     // Function to randomize and highlight even number
@@ -181,4 +183,48 @@ function exerciseFive()
         echo "</tr>";
     }
     echo "</table>";
+}
+
+// ********************** PART TWO EXERCISE TWO **********************
+function exerciseSix()
+{
+    $columnSum = [0, 0, 0, 0];
+
+    $numbers = range(1, 100);
+    shuffle($numbers);
+    $randomNumbers = array_slice($numbers, 0, 16);
+
+    // Checking of random numbers in Array
+    // print_r(array_values($randomNumbers));
+
+    // Table 
+    echo "<table>";
+    for ($row = 1; $row <= 4; $row++) {
+        $rowSum = 0;
+        echo "<tr>";
+        for ($col = 1; $col  <= 4; $col++) {
+            // Checking of removal of random numbers in Array once used per loop
+            // print_r(array_values($randomNumbers));
+            // echo "<br>";
+            $randomArrayKey = array_rand($randomNumbers);
+            echo "<td>" . $randomNumbers[$randomArrayKey] .
+                "</td>";
+            // add rows
+            $rowSum += $randomNumbers[$randomArrayKey];
+            // add columns
+            $columnSum[$col - 1] = $columnSum[$col - 1] + $randomNumbers[$randomArrayKey];
+            unset($randomNumbers[$randomArrayKey]);
+        }
+        // Output Sum of Each Row
+        echo "<td class='border-0 fw-bolder'>" . $rowSum . "</td>";
+        echo "</tr>";
+    }
+    // Output Sum of Each Column
+    echo "<tr>";
+    for ($row = 1; $row <= 4; $row++) {
+        echo "<td class='border-0 fw-bolder'>" . $columnSum[$row - 1] . "</td>";
+    }
+    echo "</tr>";
+    echo "</table>";
+    print_r(array_values($columnSum));
 }
