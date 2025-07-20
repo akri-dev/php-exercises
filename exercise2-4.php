@@ -67,7 +67,7 @@ if (isset($_POST['btn_pop']) && $_POST['btn_pop'] === 'pop') {
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Part 2 - Exercise 3</title>
+    <title>Part 2 - Exercise 4</title>
     <!-- CSS Link -->
     <link rel="stylesheet" href="assets/styles/style.css">
     <!-- Bootstrap -->
@@ -78,7 +78,7 @@ if (isset($_POST['btn_pop']) && $_POST['btn_pop'] === 'pop') {
 
 <body>
     <main class="container">
-        <h1 class="text-center">3. Create a stack of integers using arrays (First In Last Out)</h1>
+        <h1 class="text-center">4. Create a queue of integers using arrays (First In First Out)</h1>
         <div class="exercise-section part-two mt-4">
             <!-- Message Display Area: Only show if there's a message -->
             <?php if (!empty($message)): ?>

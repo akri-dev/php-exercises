@@ -164,7 +164,7 @@ function exerciseFive()
     // Function to randomize and highlight even number
     function randomizeCharacter()
     {
-        $semiAlphabet = ['a', 'b', 'c', 'd', 'e', 'f', 'g', 'h', 'i', 'j'];
+        $semiAlphabet = ['a', 'b', 'c', 'd', 'e', 'f', 'g', 'h', 'i', 'j', 'k'];
         $arrayKey = array_rand($semiAlphabet, 1);
         if (($arrayKey % 2) == 0) {
             return "<td class='text-uppercase' style='background-color: #b6d7a8;'>" . $semiAlphabet[$arrayKey] . "</td>";

@@ -18,7 +18,7 @@ include 'assets/functions/exercise-functions.php'
 
 <body>
     <main class="container">
-        <h1 class="text-center">1. Generate a random character from a -k</h1>
+        <h1 class="text-center">1. Generate a random character from a-k</h1>
         <div class="exercise-section part-two mt-4">
             <?php
             echo exerciseFive();
