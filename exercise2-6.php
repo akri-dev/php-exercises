@@ -61,22 +61,22 @@
                         <p>Bubble sort places the largest element first at its correct position and then proceeds to the next largest element and does the loop again</p>
                     </li>
                     <li>
-                        <p>The variable being assigned(left-hand side) should be in the right-hand side, and vice verse</p>
+                        <p>The variable <span class="text-danger">(code: $lists[$child] = $lists[$child + 1];)</span> being assigned(left-hand side) should be in the right-hand side, and vice verse</p>
                     </li>
                     <li>
-                        <p>$lists[$child + 1] should be the variable to be assigned to</p>
+                        <p><span class="text-danger">$lists[$child + 1]</span> should be the variable to be assigned to</p>
                     </li>
                     <li>
-                        <p>The if statement asks if $lists[$child] is the greater value</p>
+                        <p>The if statement asks if <span class="text-danger">$lists[$child]</span> is the greater value</p>
                     </li>
                     <li>
-                        <p>For ascending order to the right, this statement would be used to check the current array value if it's the largest</p>
+                        <p>For ascending order to the right, this if statement would be used to check the current array value if it's the largest</p>
                     </li>
                     <li>
-                        <p>Therefore, moving the current array value to the next array key</p>
+                        <p>This if statement would allow moving the current array value to the next array key</p>
                     </li>
                     <li>
-                        <p>The temporary variable will be moved to the left, therefore, the current array key</p>
+                        <p>The temporary variable will be moved to the left which will be stored in the current array key</p>
                     </li>
                     <li>
                         <p>Function does not have return statement</p>
