@@ -1,61 +1,62 @@
 <?php
 session_start();
 
-if (!isset($_SESSION['stack'])) {
-    $_SESSION['stack'] = [];
+if (!isset($_SESSION['queue'])) {
+    $_SESSION['queue'] = [];
 }
 
 // Variables to hold messages for user feedback
 $message = '';
 $messageType = '';
 
-// --- Handle Push Operation ---
+// --- Handle Enqueue Operation ---
 // Check if the form was submitted with the 'push' action
-if (isset($_POST['btn_new']) && $_POST['btn_new'] === 'push') {
+if (isset($_POST['btn_enqueue']) && $_POST['btn_enqueue'] === 'enqueue') {
     $value = filter_input(INPUT_POST, 'inputValue', FILTER_VALIDATE_INT);
     if ($value === false || $value === null) {
-        $message = 'Please enter a valid integer to push.';
+        $message = 'Please enter a valid integer to enqueue.';
         $messageType = 'error';
     } else {
-        $_SESSION['stack'][] = $value;
+        $_SESSION['queue'][] = $value;
 
-        $message = "Pushed {$value} onto the stack.";
+        $message = "Enqueued {$value} onto the queue.";
         $messageType = 'success';
     }
 }
 
-// --- Handle Pop Operation ---
-// Check if the form was submitted with the 'pop' action
-if (isset($_POST['btn_pop']) && $_POST['btn_pop'] === 'pop') {
-    // Determine stack size and check if empty without using count() or empty()
-    $stackSize = 0;
-    foreach ($_SESSION['stack'] as $item) {
-        $stackSize++;
+// --- Handle Dequeue Operation ---
+// Check if the form was submitted with the 'dequeue' action
+if (isset($_POST['btn_dequeue']) && $_POST['btn_dequeue'] === 'dequeue') {
+    // Manually determine queue size and check if empty without using count() or empty()
+    $queueSize = 0;
+    foreach ($_SESSION['queue'] as $item) {
+        $queueSize++;
     }
 
-    if ($stackSize === 0) {
-        $message = 'Stack is empty. Cannot pop.';
+    if ($queueSize === 0) { // Queue is empty
+        $message = 'Queue is empty. Cannot dequeue.';
         $messageType = 'warning';
     } else {
-        $poppedValue = null;
-        $newStack = [];
-        $newStackIndex = 0;
-
-        // Iterate through the current stack to find the last element
-        // and build a new array without the last element.
+        $dequeuedValue = null;
+        $newQueue = [];
+        $newQueueIndex = 0;
         $currentIndex = 0;
-        foreach ($_SESSION['stack'] as $item) {
-            if ($currentIndex === $stackSize - 1) { // This is the last element
-                $poppedValue = $item;
+
+        // The first element (at index 0) is the one to be dequeued.
+        // We will skip it and copy the rest to a new array.
+        foreach ($_SESSION['queue'] as $item) {
+            if ($currentIndex === 0) { // This is the element to dequeue
+                $dequeuedValue = $item;
             } else {
-                $newStack[$newStackIndex++] = $item; // Copy to new stack
+                // Copy all subsequent elements to the new queue
+                $newQueue[$newQueueIndex++] = $item;
             }
             $currentIndex++;
         }
 
-        $_SESSION['stack'] = $newStack; // Replace the old stack with the new one
+        $_SESSION['queue'] = $newQueue; // Replace the old queue with the new one
 
-        $message = "Popped {$poppedValue} from the stack.";
+        $message = "Dequeued {$dequeuedValue} from the queue.";
         $messageType = 'success';
     }
 }
@@ -83,38 +84,38 @@ if (isset($_POST['btn_pop']) && $_POST['btn_pop'] === 'pop') {
             <!-- Message Display Area: Only show if there's a message -->
             <?php if (!empty($message)): ?>
                 <div id="messageBox" class="message-box <?php echo htmlspecialchars($messageType); ?>">
-                    <?php echo htmlspecialchars($message); // Display the message, safely escaped 
+                    <?php echo htmlspecialchars($message); // Display the message, safely escaped
                     ?>
                 </div>
             <?php endif; ?>
-            <!-- Input Field for Stack -->
+            <!-- Input Field for Queue -->
             <form method="post">
                 <input type="number" name="inputValue" class="form-control form-control-lg" placeholder="Enter Integer">
                 <div class="form-group mt-2 d-flex justify-content-evenly">
-                    <button type='submit' name="btn_new" value="push" class="btn btn-warning m-1">Insert New Value</button>
-                    <button type='submit' name="btn_pop" value="pop" class="btn btn-danger m-1">Remove Top Value</button>
+                    <button type='submit' name="btn_enqueue" value="enqueue" class="btn btn-warning m-1">Enqueue Value</button>
+                    <button type='submit' name="btn_dequeue" value="dequeue" class="btn btn-danger m-1">Dequeue Value</button>
                 </div>
             </form>
 
-            <!-- Stack Display Area -->
-            <h2 class="text-xl font-semibold text-gray-700 mb-3 mt-3 text-center">Current Stack:</h2>
-            <div id="stackDisplay" class="stack-container">
+            <!-- Queue Display Area -->
+            <h2 class="text-xl font-semibold text-gray-700 mb-3 mt-3 text-center">Current Queue:</h2>
+            <div id="queueDisplay" class="stack-container"> <!-- Reusing stack-container class for styling -->
                 <?php
-                // Manually determine stack size for display logic
-                $currentStackSize = 0;
-                foreach ($_SESSION['stack'] as $item) {
-                    $currentStackSize++;
+                // Manually determine queue size for display logic
+                $currentQueueSize = 0;
+                foreach ($_SESSION['queue'] as $item) {
+                    $currentQueueSize++;
                 }
 
-                // Check if the stack is empty and display a message accordingly
-                if ($currentStackSize === 0): ?>
-                    <p id="emptyStackMessage" class="text-gray-500 text-center w-full">Stack is empty.</p>
+                // Check if the queue is empty and display a message accordingly
+                if ($currentQueueSize === 0): ?>
+                    <p id="emptyQueueMessage" class="text-gray-500 text-center w-full">Queue is empty.</p>
                     <?php else:
-                    // Iterate through the stack and create HTML div elements for each item.
-                    foreach ($_SESSION['stack'] as $item):
+                    // Iterate through the queue and create HTML div elements for each item.
+                    foreach ($_SESSION['queue'] as $item):
                     ?>
-                        <div class="stack-item">
-                            <?php echo htmlspecialchars($item); // Display stack item, safely escaped
+                        <div class="stack-item"> <!-- Reusing stack-item class for styling -->
+                            <?php echo htmlspecialchars($item); // Display queue item, safely escaped
                             ?>
                         </div>
                 <?php endforeach;
