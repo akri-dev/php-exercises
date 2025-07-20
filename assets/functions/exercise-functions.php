@@ -119,19 +119,35 @@ function exerciseTwo()
 }
 
 
-function exerciseThree() {
+function exerciseThree()
+{
     echo "<table>";
-    for($row = 1; $row <= 5; $row++){
+    for ($row = 1; $row <= 5; $row++) {
         echo "<tr>";
-        for($col = 1; $col <= $row; $col++) {
-            echo "<td>" . $row*$col . "</td>";
+        for ($col = 1; $col <= $row; $col++) {
+            echo "<td>" . $row * $col . "</td>";
         }
         echo "</tr>";
     }
-    for($row = 4; $row >= 1; $row--){
+    for ($row = 4; $row >= 1; $row--) {
         echo "<tr>";
-        for($col = 1; $col <= $row; $col++) {
-            echo "<td>" . $row*$col . "</td>";
+        for ($col = 1; $col <= $row; $col++) {
+            echo "<td>" . $row * $col . "</td>";
+        }
+        echo "</tr>";
+    }
+    echo "</table>";
+}
+
+function exerciseFour()
+{
+    echo "<table>";
+    for ($row = 1; $row <= 6; $row++) {
+        echo "<tr>";
+        echo "<td>" . $row . "</td>";
+        $currentValue = $row;
+        for ($col = 1; $col <= 4; $col++) {
+            echo "<td>" . ($currentValue *= ($row + 1)) . "</td>";
         }
         echo "</tr>";
     }
