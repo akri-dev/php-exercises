@@ -29,7 +29,7 @@
                 <div class="list-group">
                     <a href="./exercise2-1.php" class="list-group-item list-group-item-action" aria-current="true">1. Generate a random character from a -k </a>
                     <a href="./exercise2-2.php" class="list-group-item list-group-item-action" aria-current="true">2. Manipulation of multidimensional array</a>
-                    <a href="#" class="list-group-item list-group-item-action" aria-current="true"></a>
+                    <a href="./exercise2-3.php" class="list-group-item list-group-item-action" aria-current="true">3. Create a stack of integers using arrays( First in last out )</a>
                     <a href="#" class="list-group-item list-group-item-action" aria-current="true"></a>
                     <a href="#" class="list-group-item list-group-item-action" aria-current="true"></a>
                     <a href="#" class="list-group-item list-group-item-action" aria-current="true"></a>
