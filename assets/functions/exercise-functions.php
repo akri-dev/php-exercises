@@ -226,5 +226,10 @@ function exerciseSix()
     }
     echo "</tr>";
     echo "</table>";
+    // Checking of Sum of Column numbers in Array
     print_r(array_values($columnSum));
+}
+
+function exerciseSeven() {
+    
 }
