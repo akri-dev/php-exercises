@@ -44,7 +44,7 @@
 
                             // the temporary variable will be moved to the left, therefore, the current array key
                             $lists[$child] = $temp;
-                        } 
+                        }
                     }
                 }
                 return $lists; // function does not have return statement
