@@ -7,7 +7,7 @@ include 'assets/functions/exercise-functions.php'
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Exercise 2</title>
+    <title>Part 1 - Exercise 2</title>
     <!-- CSS Link -->
     <link rel="stylesheet" href="assets/styles/style.css">
     <!-- Bootstrap -->

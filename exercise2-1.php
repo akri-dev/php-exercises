@@ -7,7 +7,7 @@ include 'assets/functions/exercise-functions.php'
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Exercise 4</title>
+    <title>Part 2 - Exercise 1</title>
     <!-- CSS Link -->
     <link rel="stylesheet" href="assets/styles/style.css">
     <!-- Bootstrap -->
@@ -18,10 +18,10 @@ include 'assets/functions/exercise-functions.php'
 
 <body>
     <main class="container">
-        <h1 class="text-center">4. Create the given pattern</h1>
-        <div class="exercise-section mt-4">
+        <h1 class="text-center">1. Generate a random character from a -k</h1>
+        <div class="exercise-section part-two mt-4">
             <?php
-            echo exerciseFour();
+            echo exerciseFive();
             ?>
         </div>
         <a href="index.php" type="button" class="btn btn-success mt-4" role="home button"><i class="fa-solid fa-house"></i> Table of Contents</a>

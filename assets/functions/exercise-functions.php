@@ -141,13 +141,42 @@ function exerciseThree()
 
 function exerciseFour()
 {
+
     echo "<table>";
     for ($row = 1; $row <= 6; $row++) {
         echo "<tr>";
+        // All first column values
         echo "<td>" . $row . "</td>";
         $currentValue = $row;
+        // Second column to Fifth column
         for ($col = 1; $col <= 4; $col++) {
             echo "<td>" . ($currentValue *= ($row + 1)) . "</td>";
+        }
+        echo "</tr>";
+    }
+    echo "</table>";
+}
+
+function exerciseFive()
+{
+    // Function to randomize and highlight even number
+    function randomizeCharacter()
+    {
+        $semiAlphabet = ['a', 'b', 'c', 'd', 'e', 'f', 'g', 'h', 'i', 'j'];
+        $arrayKey = array_rand($semiAlphabet, 1);
+        if (($arrayKey % 2) == 0) {
+            return "<td class='text-uppercase' style='background-color: #b6d7a8;'>" . $semiAlphabet[$arrayKey] . "</td>";
+        } else {
+            return "<td>" . $semiAlphabet[$arrayKey] . "</td>";
+        }
+    }
+
+    // Table 
+    echo "<table>";
+    for ($row = 1; $row <= 4; $row++) {
+        echo "<tr>";
+        for ($col = 1; $col  <= 5; $col++) {
+            echo randomizeCharacter();
         }
         echo "</tr>";
     }
