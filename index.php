@@ -32,7 +32,7 @@
                     <a href="./exercise2-3.php" class="list-group-item list-group-item-action" aria-current="true">3. Create a stack of integers using arrays (First In Last Out)</a>
                     <a href="./exercise2-4.php" class="list-group-item list-group-item-action" aria-current="true">4. Create a queue of integers using arrays (First In First Out)</a>
                     <a href="./exercise2-5.php" class="list-group-item list-group-item-action" aria-current="true">5. Using a PHP POST method, ask the user to input 2 numbers</a>
-                    <a href="#" class="list-group-item list-group-item-action" aria-current="true"></a>
+                    <a href="./exercise2-6.php" class="list-group-item list-group-item-action" aria-current="true">6. Fix the code function to output the correct result. Explain your answer</a>
                 </div>
             </div>
         </div>
