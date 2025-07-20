@@ -99,7 +99,7 @@ if (isset($_POST['btn_dequeue']) && $_POST['btn_dequeue'] === 'dequeue') {
 
             <!-- Queue Display Area -->
             <h2 class="text-xl font-semibold text-gray-700 mb-3 mt-3 text-center">Current Queue:</h2>
-            <div id="queueDisplay" class="stack-container"> <!-- Reusing stack-container class for styling -->
+            <div id="queueDisplay" class="stack-container"> 
                 <?php
                 // Manually determine queue size for display logic
                 $currentQueueSize = 0;
@@ -114,7 +114,7 @@ if (isset($_POST['btn_dequeue']) && $_POST['btn_dequeue'] === 'dequeue') {
                     // Iterate through the queue and create HTML div elements for each item.
                     foreach ($_SESSION['queue'] as $item):
                     ?>
-                        <div class="stack-item"> <!-- Reusing stack-item class for styling -->
+                        <div class="stack-item">
                             <?php echo htmlspecialchars($item); // Display queue item, safely escaped
                             ?>
                         </div>
