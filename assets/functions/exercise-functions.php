@@ -237,9 +237,9 @@ function exerciseSeven($length, $width)
     $consonants = "bcdfghjklmnpqrstvwxyz"; // All lowercase English consonants
     echo "<div class='mt-2 d-flex  justify-content-center'>";
     echo "<table>";
-    for ($row = 1; $row <= $width; $row++) {
+    for ($row = 1; $row <= $width; $row++) { //width being how thick the grid is vertically
         echo "<tr>";
-        for ($col = 1; $col <= $length; $col++) {
+        for ($col = 1; $col <= $length; $col++) { //length being how long the grid is horizontally
             $randomIndex = rand(0, strlen($consonants) - 1);
             $consonants[$randomIndex];
             echo "<td>" . $consonants[$randomIndex] . "</td>";
